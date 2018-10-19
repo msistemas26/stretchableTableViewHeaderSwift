@@ -2,4 +2,4 @@
 
 ## Example
 
-![alt text](./example.gif "Ejemplos")
+![Example](./example.gif "Example")
