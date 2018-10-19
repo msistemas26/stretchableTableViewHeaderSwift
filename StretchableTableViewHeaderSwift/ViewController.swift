@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var headerView: UIImageView!
     
     struct Constants {
-        static let imageSize:CGFloat = 60.0
+        static let imageSize:CGFloat = 100.0
+        static let imageSizeMin:CGFloat = 20.0
+        static let imageSizeMax:CGFloat = 600.0
     }
 
     override func viewDidLoad() {
@@ -42,7 +44,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,8 +56,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = Constants.imageSize - (scrollView.contentOffset.y + Constants.imageSize)
-        let height = min(max(y, Constants.imageSize), 400)
+        let y = Constants.imageSizeMin - (scrollView.contentOffset.y + Constants.imageSizeMin)
+        let height = min(max(y, Constants.imageSizeMin), Constants.imageSizeMax)
         headerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: height)
     }
 }
