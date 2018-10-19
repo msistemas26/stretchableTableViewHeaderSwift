@@ -2,4 +2,4 @@
 
 ## Example
 
-![Example](./example.gif "Example")
+![Example](./Example.gif "Example")
